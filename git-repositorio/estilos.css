@@ -1,0 +1,17 @@
+body{
+    background-color: #00ffff;
+}
+h1{
+    text-align: center;
+    background-color: #ffff;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img{
+    height: 950px;
+    width: 650px;
+}
