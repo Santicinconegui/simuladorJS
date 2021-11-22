@@ -22,3 +22,13 @@ p{
     color: #000;
     text-align: center;
 }
+.bienvenido{
+    background-color: #808080;
+    padding: 30px;
+    margin: 50px;
+    
+}
+.bienvenido p{
+    color: #fff;
+    font-size: 20px;
+}
