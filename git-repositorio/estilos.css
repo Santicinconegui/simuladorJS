@@ -15,3 +15,10 @@ img{
     height: 950px;
     width: 650px;
 }
+footer{
+    background-color:#808080;
+}
+p{
+    color: #000;
+    text-align: center;
+}
