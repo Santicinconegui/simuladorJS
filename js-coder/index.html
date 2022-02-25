@@ -5,104 +5,128 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-santiago cinconegui</title>
+    <link rel="icon" href="img/icono.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<header><h1><a href="index.html">SB DRINKS</a></i></h1></header>
-    <section class="intro">
-        <p>Ventas de bebidas por mayor o por menor</p>
-        <span class="btn_menu"><a href="https://www.instagram.com/sbdrinkss/"><i class="fab fa-instagram"></i></a></span>
-    </section>
-    <div class="bebidas">
-        <div class="bebidas-align">
-            <div class="tipsB">
-                <img src="img/absolut.png" alt="bombay" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Absolut 750ML
-                        <div class="precio">950$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/blacklabel.png" alt="blacklabel" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Black Label 1L
-                        <div class="precio">3200$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/redlabel.png" alt="redlabel" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Red Label 1L
-                        <div class="precio">2300$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/moet.png" alt="moet" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Moet 750ML
-                        <div class="precio">13000$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/fernet.png" alt="fernet" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Fernet Branca 1L
-                        <div class="precio">890$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/smirnoff.png" alt="smirnoff" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Smirnoff 750ML
-                        <div class="precio">750$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/jager.png" alt="jager" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Jagermeister 750ML
-                        <div class="precio">2100$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tipsB">
-                <img src="img/malibu.png" alt="malibu" height="300px">
-                <div class="descripcion">
-                    <div class="nombre-prod">Malibu 750ML
-                        <div class="precio">1050$
-                            <button class="shop">Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-            
-        </div>
+
+<div class="modal-c" id="modal-c">
+    <div class="modal-1" id="modal1">
+        <h3><p> Ingrese Su Edad </p><input type="number" id="validar-edad" min="0" max="100" ></h3>                    
+        <button type="button" id="confirmarEdad" class="boton-edad" onclick="guardarEdad()">Aceptar</button>
     </div>
+</div>                     
+        <div id="insertModal"></div>
+
+<header class="headerB"><h1><a href="index.html">SB DRINKS</a></h1></header>
+
+<div class="intro">
+    <p>Ventas de bebidas para +18, a continuacion te dejamos nuestra pagina de instagram</p>
+    <span class="btn_menu"><a href="https://www.instagram.com/sbdrinkss/"><i class="fab fa-instagram"></i></a></span>
+</div>
+    
+
+   <div class="bebidas" id="bebidas-j">
+       <div class="bebidas-align" id="sub-contenedor">
+
+       </div>
+   </div>
+    
+   <div class="pedido">
+        <p> Tu Carrito</p>
+   </div>
+   <!-- START SECTION SHOPPING CART -->
+   <section class="shopping-cart">
+    <div class="container">      
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <div class="shopping-cart-header">
+                    <h6>Producto</h6>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="shopping-cart-header">
+                    <h6 class="text-truncate">Precio</h6>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="shopping-cart-header">
+                    <h6>Cantidad</h6>
+                </div>
+            </div>
+        </div>
+        <!--  ITEMS CARRITO -->
+             <div class="shopping-cart-items shoppingCartItemsContainer">
+        </div>
+        <!-- FIN ITEMS CARRITO -->
+
+        <!--  TOTAL -->
+        <div class="row">
+            <div class="col-12">
+                   <div class="shopping-cart-total d-flex align-items-center">
+                    <p class="mb-0">Total</p>
+                    <p class="ml-4 mb-0 shoppingCartTotal">0$</p>                                      
+                </div>
+            </div>
+        </div>
+
+        <!-- FIN TOTAL -->
+
+        <!-- MODAL COMPRA -->
+        <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Pronto recibirá su pedido</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN MODAL COMPRA -->
+</div>
+
+    
+
+</section>
+<!-- END SECTION SHOPPING CART -->
+
+<div id="finalizar" class="finalizar"><p>Finalizar Pedido</p></div>
+
+    
+
+<br>
+<br>
+<footer >SB Drinks, ventas solo a mayores de 18 años - Todos los derechos reservados ©</footer>
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/68e14c66c2.js" crossorigin="anonymous"></script>
+<script src="./js/assets.js"></script>
+<script src="./js/productos.js"></script>
 <script src="js/main.js"></script>
+<!-- scripts -->
 </body>
 </html>
